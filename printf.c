@@ -10,40 +10,23 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int i, j, k = 0;
-	char *spec;
-
+	int i, k = 0;
+	
 	va_start(args, format);
 	for (i = 0; format[i]; i++)
-		;
-	type tp[i + 1];
-
-	for (j = 0 ; j < i; j++)
 	{
-		if (format[j] == "%")
+		if (format[i] == '\\')
 		{
-			switch (format[j + 1])
-			{
-			case 'c':
-				tp[k].c = va_arg(args, int);
-				k++;
-				break;
-			case 'i':
-				tp[k].i = va_arg(args, int);
-				k++;
-				break;
-			case 'f':
-				tp[k].f = va_arg(args, double);
-				k++;
-				break;
-			case 's':
-				tp[k].s = va_arg(args, char *);
-				k++;
-				break;
-			default:
-				break;
-			}
+			k+=checkspecial(format[i + 1]);
+			i++;
 		}
+		else if (format[i] == '%')
+		{
+			k+=checktype(format[i + 1], args);
+			i++;
+		}
+		else
+			k+=_putchar(format[i]);
 	}
 	return (k);
 }
