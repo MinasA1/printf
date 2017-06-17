@@ -5,19 +5,21 @@
 #include <unistd.h>
 
 /**
- * union strings - saves the type and value of an arguement
- * @t: type of argument
- * @s: value of argument
+ * identifiers - struct for identifier and corresponding function pointers
+ * @type: type of argument
+ * @f: function pointer to corresponding function
  */
-typedef union strings
+typedef struct identifiers
 {
-	char t;
-	char *s;
-	int i;
-	float f;
-	char c;
-} type;
+        char *type;
+        void (*f)();
+}id;
 
 int _printf(const char *format, ...);
 int _putstring(char *str);
+int pc(va_list valist);
+int ps(va_list valist);
+int pp(va_list valist);
+int pi(va_list valist);
+
 #endif
