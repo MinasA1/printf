@@ -1,4 +1,4 @@
-.TH _printf 1 "06 17 2017" "1.0"
+.TH _printf 3 "06 17 2017" "1.0"
 .SH NAME
 _printf \- simple replication of printf function
 .SH SYNOPSIS
