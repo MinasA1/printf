@@ -1,3 +1,4 @@
+#include "holberton.h"
 #include <unistd.h>
 
 /**
@@ -32,30 +33,34 @@ int _putchar(char c)
 	return (write(1, &c, 1));
 }
 
-int _checktype(char *tp, va_list list)
+int _checktype(char tp, va_list list)
 {
 	id id[] =
 	{
-		{"c", pc}
-		{"d", pd}
+		{"c", pc},
+		{"d", pd},
+/*
 		{"e", pe}
 		{"f", pf}
 		{"g", pg}
 		{"i", pi}
 		{"o", po}
-		{"s", ps}
+*/
+		{"s", ps},
+/*
 		{"u", pu}
 		{"x", px}
+*/
 		{"%", pp}
 	};
 	int i, sum = 0;
 	
 	for (i = 0; i < 11; i++)
 	{
-		if (id[i].type[0] == tp[0])
-			sum+= id[i].f(valist);
+		if (id[i].type[0] == tp)
+			sum += id[i].f(list);
 		else 
-			sum+= _putchar(tp[0]);
+			sum += _putchar(tp);
 	}
 	return (sum);
 }

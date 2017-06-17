@@ -10,7 +10,7 @@ int pc(va_list valist)
 
 	c = va_arg(valist, int);
 
-	_putchar('c');
+	_putchar(c);
 	return (1);
 }
 
@@ -28,17 +28,14 @@ int ps(va_list valist)
 	return (i + 1);
 }
 
-int pp(va_list valist)
+int pp(va_list valist __attribute__((unused)))
 {
-	int n;
-
-	n = va_arg(valist, int);
 	_putchar('%');
 	return (1);
 }
 
 
-int pi(va_list valist)
+int pd(va_list valist)
 {
 	int n, sign, k;
 
