@@ -19,5 +19,5 @@ typedef union strings
 } type;
 
 int _printf(const char *format, ...);
-
+int _putstring(char *str);
 #endif

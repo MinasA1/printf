@@ -12,15 +12,17 @@ int _printf(const char *format, ...)
 	va_list args;
 	int i, j, k = 0;
 	char *spec;
+
 	va_start(args, format);
 	for (i = 0; format[i]; i++)
 		;
-	type tp[i+1];
+	type tp[i + 1];
+
 	for (j = 0 ; j < i; j++)
 	{
 		if (format[j] == "%")
 		{
-			switch(format[j + 1])
+			switch (format[j + 1])
 			{
 			case 'c':
 				tp[k].c = va_arg(args, int);
@@ -38,9 +40,10 @@ int _printf(const char *format, ...)
 				tp[k].s = va_arg(args, char *);
 				k++;
 				break;
-			default :
+			default:
 				break;
 			}
 		}
 	}
+	return (k);
 }
