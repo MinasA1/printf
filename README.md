@@ -16,7 +16,7 @@ Printf project for Holberton School to create a simple replication of `printf()`
   `pu() - prints unsigned integer  
   `px() - prints hexidecimal  
 
-- [print_fcns.c](print_fcns.c) - (continuation) helper fucntions to print according to type/conversion specifier and returns characters printed  
+- [print_fcns2.c](print_fcns2.c) - (continuation) helper fucntions to print according to type/conversion specifier and returns characters printed  
   `pxx()` - prints hexidecimal  
   `po()` - prints unsigned octal  
   `pp()` - prints void pointer in hexidecimal  
