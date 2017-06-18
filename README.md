@@ -9,11 +9,18 @@ Printf project for Holberton School to create a simple replication of `printf()`
   `_checktype()` - checks and matches a conversion specifier with its corresponding function  
 
 - [print_fcns.c](print_fcns.c) - helper fucntions to print according to type/conversion specifier and returns characters printed  
-  `pc()` - prints a char  
-  `ps()` - prints a string  
-  `pp()` - prints a '%' character  
-  `pd()` - prints a decimal  
-  `pi()` - prints an integer  
+  `pc()` - prints char  
+  `ps()` - prints string  
+  `pd()` - prints decimal  
+  `pi()` - prints integer  
+  `pu() - prints unsigned integer  
+  `px() - prints hexidecimal  
+
+- [print_fcns.c](print_fcns.c) - (continuation) helper fucntions to print according to type/conversion specifier and returns characters printed  
+  `pxx()` - prints hexidecimal  
+  `po()` - prints unsigned octal  
+  `pp()` - prints void pointer in hexidecimal  
+  `pb()` - prints integer in binary  
 
 - [_printf](_printf) - function with basic functionalities `printf()` that checks each argument for conversion specifiers, prints accordingly, and return characters printed  
 
