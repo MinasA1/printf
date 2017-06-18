@@ -4,7 +4,7 @@ _printf \- simple replication of printf function
 .SH SYNOPSIS
 .B #include "holberton.h"
 
-.B int _printf(const char \fI*format\fR, ...)
+.B int _printf(const char \fI*format\fR\fB, ...)\fR
 
 .SH DESCRIPTION
 \fB_printf()\fR produces output according  to  a \fformat\fR as described below. This function writes to  \fIstdout\fR, the  standard  output stream, under the control of a format string that specifies how  subsequent arguments  (or  arguments  accessed  via the variable-length argument facilities of \fBstdarg\fR(3)) are convertedfor output.
