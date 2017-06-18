@@ -7,7 +7,7 @@
  * Return: number of chars printed
  */
 
-void _putstring(char *str)
+int _putstring(char *str)
 {
 	int i = 0;
 
@@ -32,23 +32,30 @@ int _putchar(char c)
 	return (write(1, &c, 1));
 }
 
-int _checktype(char *type, ...)
+int _checktype(char *tp, va_list list)
 {
-	switch(format[j + 1])
+	id id[] =
 	{
-	case 'c':
-		
-		break;
-	case 'i':
-		
-		break;
-	case 'f':
-		
-		break;
-	case 's':
-		
-		break;
-	default :
-		break;
+		{"c", pc}
+		{"d", pd}
+		{"e", pe}
+		{"f", pf}
+		{"g", pg}
+		{"i", pi}
+		{"o", po}
+		{"s", ps}
+		{"u", pu}
+		{"x", px}
+		{"%", pp}
+	};
+	int i, sum = 0;
+	
+	for (i = 0; i < 11; i++)
+	{
+		if (id[i].type[0] == tp[0])
+			sum+= id[i].f(valist);
+		else 
+			sum+= _putchar(tp[0]);
 	}
+	return (sum);
 }
