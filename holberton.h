@@ -17,6 +17,7 @@ typedef struct identifiers
 
 int _printf(const char *format, ...);
 int _putstring(char *str);
+int _putchar(char c);
 int pc(va_list valist);
 int ps(va_list valist);
 int pp(va_list valist);
