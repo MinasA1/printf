@@ -7,12 +7,14 @@ Printf project for Holberton School to create a simple replication of `printf()`
 * `_putstring()` - prints a string
 * `_putchar()` - prints a char
 * `_checktype()` - checks and matches a conversion specifier with its corresponding function  
+
 [print_fcns.c](print_fcns.c) - helper fucntions to print according to type/conversion specifier and returns characters printed
 * `pc()` - prints a char
 * `ps()` - prints a string
 * `pp()` - prints a '%' character
 * `pd()` - prints a decimal
 * `pi()` - prints an integer  
+
 [_printf](_printf) - function with basic functionalities `printf()` that checks each argument for conversion specifiers, prints accordingly, and return characters printed
 
 ## Usage
@@ -25,5 +27,5 @@ To print the string "Hello, World!":
 _printf("%d\\n", string);
 
 ## Authors
-Minas Anton - [Github](https://github.com/MinasA1)
+Minas Anton - [Github](https://github.com/MinasA1)  
 Jennifer Huang - [Github](https://github.com/jhuang10123)
