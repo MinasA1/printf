@@ -2,7 +2,7 @@
 #include <unistd.h>
 
 /**
- * _puts - prints a string followed by a new line
+ * _putstring - prints a string followed by a new line
  * @str: string to print
  *
  * Return: number of chars printed
@@ -34,6 +34,12 @@ int _putchar(char c)
 	return (1);
 }
 
+/**
+ * checktype - matches a conversion specifier with its corresponding function
+ * @tp: char passed in by format
+ * @list: va_list from which to access
+ * Return: number of chars printed
+ */
 int checktype(char tp, va_list list)
 {
 	id id[] = {
