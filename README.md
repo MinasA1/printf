@@ -24,7 +24,7 @@ Printf project for Holberton School to create a simple replication of `printf()`
 To print the string "Hello, World!":
 
 #include "holberton.h"  
-_printf("%d\\n", string);
+_printf("%s\\n", string);
 
 ## Authors
 Minas Anton - [Github](https://github.com/MinasA1)  
