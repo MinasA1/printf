@@ -3,6 +3,8 @@
 #include <stdlib.h>
 #include <stdarg.h>
 #include <unistd.h>
+#include <limits.h>
+
 /**
  * struct identifiers - struct for identifier and corresponding func pointers
  * @type: type of argument
@@ -24,4 +26,8 @@ int pu(va_list valist);
 int pd(va_list valist);
 int px(va_list valist);
 int pxx(va_list valist);
+int po(va_list valist);
+int pp(va_list valist);
+int pb(va_list valist);
+
 #endif
