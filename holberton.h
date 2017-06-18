@@ -20,7 +20,8 @@ int _putchar(char c);
 int checktype(char tp, va_list list);
 int pc(va_list valist);
 int ps(va_list valist);
-int pp(va_list valist);
+int pu(va_list valist);
 int pd(va_list valist);
-
+int px(va_list valist);
+int pxx(va_list valist);
 #endif
