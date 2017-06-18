@@ -1,5 +1,9 @@
 #include "holberton.h"
-
+/**
+ * pxx - print hexidecimal
+ * @valist: argument list
+ * Return: chars printed
+ */
 int pxx(va_list valist)
 {
 	unsigned int n;
@@ -17,19 +21,25 @@ int pxx(va_list valist)
 		c++;
 	}
 	c--;
-	while(c >= 0)
+	while (c >= 0)
 	{
 		if (hex[c] >= 0 && hex[c] <= 9)
-                        k += _putchar(hex[c] + '0');
-                else
-                {
-                        k += _putchar((hex[c] % 10) + 'A');
-                }
+			k += _putchar(hex[c] + '0');
+		else
+		{
+			k += _putchar((hex[c] % 10) + 'A');
+		}
 		c--;
 	}
 	return (k);
 
 }
+
+/**
+ * po - print unsigned octal
+ * @valist: argument list
+ * Return: chars printed
+ */
 int po(va_list valist)
 {
 	unsigned int n;
@@ -46,7 +56,7 @@ int po(va_list valist)
 		c++;
 	}
 	c--;
-	while(c >= 0)
+	while (c >= 0)
 	{
 		if (oct[c] >= 0 && oct[c] < 9)
 			k += _putchar(oct[c] + '0');
@@ -56,6 +66,11 @@ int po(va_list valist)
 
 }
 
+/**
+ * pp - print void pointer in hexidecimal
+ * @valist: argument list
+ * Return: chars printed
+ */
 int pp(va_list valist)
 {
 	long int ptr, adr[16];
@@ -67,7 +82,7 @@ int pp(va_list valist)
 	else
 	{
 		k += _putchar('0');
-                k += _putchar('x');
+		k += _putchar('x');
 		while (ptr != 0)
 		{
 			adr[c] = ptr % 16;
@@ -75,7 +90,7 @@ int pp(va_list valist)
 			c++;
 		}
 		c--;
-		while(c >= 0)
+		while (c >= 0)
 		{
 			if (adr[c] >= 0 && adr[c] <= 9)
 				k += _putchar(adr[c] + '0');
@@ -89,6 +104,12 @@ int pp(va_list valist)
 	return (k);
 }
 
+
+/**
+ * pb - print integer in binary
+ * @valist: argument list
+ * Return: chars printed
+ */
 int pb(va_list valist)
 {
 	unsigned int n;
@@ -98,19 +119,19 @@ int pb(va_list valist)
 	n = va_arg(valist, unsigned int);
 	if (n == 0)
 		k += _putchar('0');
-        while (n != 0)
-        {
-                bin[c] = n % 2;
-                n /= 2;
-                c++;
-        }
-        c--;
-        while(c >= 0)
-        {
-                if (bin[c] >= 0 && bin[c] < 2)
-			k += _putchar(bin[c] + '0');
-                c--;
+	while (n != 0)
+	{
+		bin[c] = n % 2;
+		n /= 2;
+		c++;
 	}
-        return (k);
+	c--;
+	while (c >= 0)
+	{
+		if (bin[c] >= 0 && bin[c] < 2)
+			k += _putchar(bin[c] + '0');
+		c--;
+	}
+	return (k);
 
 }

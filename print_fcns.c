@@ -13,6 +13,12 @@ int pc(va_list valist)
 	_putchar(c);
 	return (1);
 }
+
+/**
+ * ps - print string
+ * @valist: argument list
+ * Return: chars printed
+ */
 int ps(va_list valist)
 {
 	char *str;
@@ -24,6 +30,11 @@ int ps(va_list valist)
 }
 
 
+/**
+ * pd - print decimal
+ * @valist: argument list
+ * Return: chars printed
+ */
 int pd(va_list valist)
 {
 	int n, k = 0, i, a = 1000000000, nmin;
@@ -48,7 +59,7 @@ int pd(va_list valist)
 	}
 	if (n == 0)
 		k += _putchar('0');
-	if( n != INT_MIN)
+	if (n != INT_MIN)
 	{
 		for (i = 0; i < 10; i++)
 		{
@@ -61,6 +72,12 @@ int pd(va_list valist)
 
 }
 
+
+/**
+ * pu - print unsigned integer
+ * @valist: argument list
+ * Return: chars printed
+ */
 int pu(va_list valist)
 {
 	unsigned int n, i, a = 1000000000;
@@ -79,6 +96,11 @@ int pu(va_list valist)
 
 }
 
+/**
+ * px - print lower case hexidecimal
+ * @valist: argument list
+ * Return: chars printed
+ */
 int px(va_list valist)
 {
 	unsigned int n;
@@ -96,14 +118,14 @@ int px(va_list valist)
 		c++;
 	}
 	c--;
-	while(c >= 0)
+	while (c >= 0)
 	{
 		if (hex[c] >= 0 && hex[c] <= 9)
-                        k += _putchar(hex[c] + '0');
-                else
-                {
-                        k += _putchar((hex[c] % 10) + 'a');
-                }
+			k += _putchar(hex[c] + '0');
+		else
+		{
+			k += _putchar((hex[c] % 10) + 'a');
+		}
 		c--;
 	}
 	return (k);
