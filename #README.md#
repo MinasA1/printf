@@ -1,5 +1,6 @@
 # _printf()
-Printf project for Holberton School to create a simple replication of `printf()` in C. 
+
+
 
 ## File Descriptions
 [holberton.h](holberton.h) - header file including prototypes and libraries used. 
