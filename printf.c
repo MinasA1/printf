@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * _print - produces output according to a format
+ * _printf - produces output according to a format
  * @format: char string that contains directives
  *
  * Return: number of char printed
@@ -13,6 +13,9 @@ int _printf(const char *format, ...)
 	int i, k = 0;
 
 	va_start(args, format);
+
+	if (format == NULL)
+		return (-1);
 
 	for (i = 0; format[i]; i++)
 	{
