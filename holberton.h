@@ -4,15 +4,15 @@
 #include <stdarg.h>
 #include <unistd.h>
 /**
- * identifiers - struct for identifier and corresponding function pointers
+ * struct identifiers - struct for identifier and corresponding func pointers
  * @type: type of argument
  * @f: function pointer to corresponding function
  */
 typedef struct identifiers
 {
-        char *type;
-        int (*f)(va_list list);
-}id;
+	char *type;
+	int (*f)(va_list list);
+} id;
 
 int _printf(const char *format, ...);
 int _putstring(char *str);

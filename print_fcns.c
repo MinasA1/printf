@@ -33,21 +33,21 @@ int pp(va_list valist __attribute__((unused)))
 
 int pd(va_list valist)
 {
-	int n, k = 0, i , a = 1000000000;
+	int n, k = 0, i, a = 1000000000;
 
 	n = va_arg(valist, int);
 	if (n < 0)
 	{
-		k+= _putchar('-');
-		n*= -1;
+		k += _putchar('-');
+		n *= -1;
 	}
 	if (n == 0)
-		k+= _putchar('0');
+		k += _putchar('0');
 	for (i = 0; i < 10; i++)
 	{
 		if (n / a != 0)
-			k+= _putchar(((n / a) % 10) + '0');
-		a/= 10;
+			k += _putchar(((n / a) % 10) + '0');
+		a /= 10;
 	}
 	return (k);
 

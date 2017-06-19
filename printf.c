@@ -16,19 +16,19 @@ int _printf(const char *format, ...)
 	for (i = 0; format[i]; i++)
 	{
 /*
-		if (format[i] == '\\')
+ *		if (format[i] == '\\')
+ *		{
+ *			k+=checkspecial(format[i + 1]);
+ *			i++;
+ *		}
+ */
+		if (format[i] == '%')
 		{
-			k+=checkspecial(format[i + 1]);
-			i++;
-		}
-*/
-	        if (format[i] == '%')
-		{
-			k+= checktype(format[i + 1], args);
+			k += checktype(format[i + 1], args);
 			i++;
 		}
 		else
-			k+= _putchar(format[i]);
+			k += _putchar(format[i]);
 	}
 	return (k);
 }

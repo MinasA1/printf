@@ -36,21 +36,22 @@ int _putchar(char c)
 
 int checktype(char tp, va_list list)
 {
-	id id[] =
-	{
+	id id[] = {
 		{"c", pc},
 		{"d", pd},
 /*
-		{"e", pe}
-		{"f", pf}
-		{"g", pg} */
+ *		{"e", pe}
+ *		{"f", pf}
+ *		{"g", pg}
+ */
 		{"i", pd},
-	     /*	{"o", po}
-*/
+/*
+ * {"o", po}
+ */
 		{"s", ps}
 /*
-		{"u", pu}
-		{"x", px}
+ *		{"u", pu}
+ *		{"x", px}
 */
 	};
 	int i, sum = 0;
@@ -58,17 +59,17 @@ int checktype(char tp, va_list list)
 	for (i = 0; i < 4; i++)
 	{
 		if (id[i].type[0] == tp)
-			sum+= id[i].f(list);
+			sum += id[i].f(list);
 	}
 	if (sum == 0)
 	{
 		if (tp != '%')
 		{
-			sum+= _putchar('%');
-			sum+= _putchar(tp);
+			sum += _putchar('%');
+			sum += _putchar(tp);
 		}
 		else
-			sum+= _putchar('%');
+			sum += _putchar('%');
 	}
 	return (sum);
 }
