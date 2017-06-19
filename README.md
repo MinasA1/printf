@@ -11,8 +11,7 @@ Printf project for Holberton School to create a simple replication of `printf()`
 - [print_fcns.c](print_fcns.c) - helper fucntions to print according to type/conversion specifier and returns characters printed  
   `pc()` - prints char  
   `ps()` - prints string  
-  `pd()` - prints decimal  
-  `pi()` - prints integer  
+  `pd()` - prints decimal(and integer)   
   `pu() - prints unsigned integer  
   `px() - prints hexidecimal  
 
@@ -31,7 +30,7 @@ Printf project for Holberton School to create a simple replication of `printf()`
 To print the string "Hello, World!":  
 ```
 #include "holberton.h"  
-_printf("%s\\n", string);  
+_printf("%s\n", "Hello, World!");  
 ```
 ## Authors
 Minas Anton - [Github](https://github.com/MinasA1)  
