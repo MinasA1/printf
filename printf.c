@@ -24,8 +24,8 @@ int _printf(const char *format, ...)
 */
 	        if (format[i] == '%')
 		{
+			k+= checktype(format[i + 1], args);
 			i++;
-			k+= checktype(format[i], args);
 		}
 		else
 			k+= _putchar(format[i]);

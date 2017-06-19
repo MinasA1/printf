@@ -33,20 +33,18 @@ int pp(va_list valist __attribute__((unused)))
 
 int pd(va_list valist)
 {
-	int n, sign = 1, k = 0;
+	int n, k = 0;
 
 	n = va_arg(valist, int);
 
-	if (n < 0)
-		sign = -sign;
 
-	k+= _putchar((n % 10) * sign);
-
+	k+= _putchar(n + '0');
+/*
 	while (n >= 10)
 	{
 		n = n / 10;
 		k+= _putchar((n % 10) * sign);
-	}
+		}*/
 	return (k);
 
 }

@@ -56,12 +56,15 @@ int checktype(char tp, va_list list)
 	};
 	int i, sum = 0;
 
-	for (i = 0; i < 11; i++)
+	for (i = 0; i < 4; i++)
 	{
 		if (id[i].type[0] == tp)
-			sum += id[i].f(list);
-		else
-			sum += _putchar(tp);
+			sum+= id[i].f(list);
+	}
+	if (sum == 0)
+	{
+		sum+= _putchar('%');
+		sum+= _putchar(tp);
 	}
 	return (sum);
 }
