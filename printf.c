@@ -11,7 +11,7 @@ int _printf(const char *format, ...)
 {
 	va_list args;
 	int i, k = 0;
-	
+
 	va_start(args, format);
 	for (i = 0; format[i]; i++)
 	{
@@ -26,7 +26,6 @@ int _printf(const char *format, ...)
 		{
 			i++;
 			k+= checktype(format[i], args);
-			
 		}
 		else
 			k+= _putchar(format[i]);

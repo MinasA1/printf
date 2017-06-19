@@ -20,12 +20,8 @@ int ps(va_list valist)
 	int i;
 
 	str = va_arg(valist, char *);
-
-	for (i = 0; str[i] != '\0'; i++)
-	{
-		_putchar(str[i]);
-	}
-	return (i + 1);
+	i = _putstring(str);
+	return (i);
 }
 
 int pp(va_list valist __attribute__((unused)))
@@ -37,22 +33,19 @@ int pp(va_list valist __attribute__((unused)))
 
 int pd(va_list valist)
 {
-	int n, sign, k;
-
-	sign = 1;
-	k = 0;
+	int n, sign = 1, k = 0;
 
 	n = va_arg(valist, int);
 
-	if (n < 10)
+	if (n < 0)
 		sign = -sign;
 
-	k += _putchar ((n % 10) * sign);
+	k+= _putchar((n % 10) * sign);
 
 	while (n >= 10)
 	{
 		n = n / 10;
-		k += _putchar ((n % 10) * sign);
+		k+= _putchar((n % 10) * sign);
 	}
 	return (k);
 

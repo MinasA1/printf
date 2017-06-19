@@ -30,10 +30,11 @@ int _putstring(char *str)
  */
 int _putchar(char c)
 {
-	return (write(1, &c, 1));
+	write(1, &c, 1);
+	return (1);
 }
 
-int _checktype(char tp, va_list list)
+int checktype(char tp, va_list list)
 {
 	id id[] =
 	{
@@ -54,12 +55,12 @@ int _checktype(char tp, va_list list)
 		{"%", pp}
 	};
 	int i, sum = 0;
-	
+
 	for (i = 0; i < 11; i++)
 	{
 		if (id[i].type[0] == tp)
 			sum += id[i].f(list);
-		else 
+		else
 			sum += _putchar(tp);
 	}
 	return (sum);
