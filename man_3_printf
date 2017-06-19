@@ -7,7 +7,7 @@ _printf \- simple replication of printf function
 .B int _printf(const char \fI*format\fR\fB, ...)\fR
 
 .SH DESCRIPTION
-\fB_printf()\fR produces output according  to  a \fformat\fR as described below. This function writes to  \fIstdout\fR, the  standard  output stream, under the control of a format string that specifies how  subsequent arguments  (or  arguments  accessed  via the variable-length argument facilities of \fBstdarg\fR(3)) are convertedfor output.
+\fB_printf()\fR produces output according  to  a \fformat\fR as described below. This function writes to  \fIstdout\fR, the  standard  output stream, under the control of a format string that specifies how  subsequent arguments  (or  arguments  accessed  via the variable-length argument facilities of \fBstdarg\fR(3)) are converted for output.
 
 .SH RETURN VALUE
 Upon successful return,  these  functions  return  the number  of characters printed (excluding the null byte used to end output to strings).
@@ -41,11 +41,11 @@ The unsigned int argument is converted to binary.
 .SH BUGS
 No known bugs.
 .SH EXAMPLE
-To print the string "Hello, World!":
+To print the string "I love pie!":
 
 #include "holberton.h"
 
-_printf("%s\\n", string);
+_printf("%s\n", "I love pie!");
 
 
 .SH AUTHOR
