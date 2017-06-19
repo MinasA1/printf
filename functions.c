@@ -43,16 +43,15 @@ int checktype(char tp, va_list list)
 /*
 		{"e", pe}
 		{"f", pf}
-		{"g", pg}
-		{"i", pi}
-		{"o", po}
+		{"g", pg} */
+		{"i", pd},
+	     /*	{"o", po}
 */
-		{"s", ps},
+		{"s", ps}
 /*
 		{"u", pu}
 		{"x", px}
 */
-		{"%", pp}
 	};
 	int i, sum = 0;
 
@@ -63,8 +62,13 @@ int checktype(char tp, va_list list)
 	}
 	if (sum == 0)
 	{
-		sum+= _putchar('%');
-		sum+= _putchar(tp);
+		if (tp != '%')
+		{
+			sum+= _putchar('%');
+			sum+= _putchar(tp);
+		}
+		else
+			sum+= _putchar('%');
 	}
 	return (sum);
 }
