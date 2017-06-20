@@ -88,3 +88,29 @@ int pp(va_list valist)
 	}
 	return (k);
 }
+
+int pb(va_list valist)
+{
+	unsigned int n;
+	int k = 0, c = 0, bin[64];
+
+
+	n = va_arg(valist, unsigned int);
+	if (n == 0)
+		k += _putchar('0');
+        while (n != 0)
+        {
+                bin[c] = n % 2;
+                n /= 2;
+                c++;
+        }
+        c--;
+        while(c >= 0)
+        {
+                if (bin[c] >= 0 && bin[c] < 2)
+			k += _putchar(bin[c] + '0');
+                c--;
+	}
+        return (k);
+
+}
