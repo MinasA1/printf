@@ -13,7 +13,6 @@ int pc(va_list valist)
 	_putchar(c);
 	return (1);
 }
-
 int ps(va_list valist)
 {
 	char *str;
@@ -27,21 +26,36 @@ int ps(va_list valist)
 
 int pd(va_list valist)
 {
-	int n, k = 0, i, a = 1000000000;
+	int n, k = 0, i, a = 1000000000, nmin;
 
 	n = va_arg(valist, int);
-	if (n < 0)
+	if (n < 0 && n > INT_MIN)
 	{
 		k += _putchar('-');
 		n *= -1;
 	}
+	if (n == INT_MIN)
+	{
+		k += _putchar('-');
+		nmin = 214748364;
+		for (i = 0; i < 10; i++)
+		{
+			if (nmin / a != 0)
+				k += _putchar(((nmin / a) % 10) + '0');
+			a /= 10;
+		}
+		k += _putchar('8');
+	}
 	if (n == 0)
 		k += _putchar('0');
-	for (i = 0; i < 10; i++)
+	if( n != INT_MIN)
 	{
-		if (n / a != 0)
-			k += _putchar(((n / a) % 10) + '0');
-		a /= 10;
+		for (i = 0; i < 10; i++)
+		{
+			if (n / a != 0)
+				k += _putchar(((n / a) % 10) + '0');
+			a /= 10;
+		}
 	}
 	return (k);
 
