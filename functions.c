@@ -48,15 +48,14 @@ int checktype(char tp, va_list list)
 /*
  * {"o", po}
  */
-		{"s", ps}
-/*
- *		{"u", pu}
- *		{"x", px}
-*/
+		{"s", ps},
+		{"u", pu},
+		{"x", px},
+		{"X", pxx}
 	};
 	int i, sum = 0;
 
-	for (i = 0; i < 4; i++)
+	for (i = 0; i < 7; i++)
 	{
 		if (id[i].type[0] == tp)
 			sum += id[i].f(list);
