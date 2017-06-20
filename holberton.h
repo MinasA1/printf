@@ -24,4 +24,5 @@ int pu(va_list valist);
 int pd(va_list valist);
 int px(va_list valist);
 int pxx(va_list valist);
+int po(va_list valist);
 #endif
