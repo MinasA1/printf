@@ -23,23 +23,10 @@ int pxx(va_list valist)
                         k += _putchar(hex[c] + '0');
                 else
                 {
-                        k += _putchar((hex[c] % 10) + 'a');
+                        k += _putchar((hex[c] % 10) + 'A');
                 }
 		c--;
 	}
-/**	for (i = 0; i < c - i; i++)
-	{
-		t = hex[i];
-		hex[i] = hex[c - i];
-		hex[c - i] = t;
-		if (hex[i] >= 0 && hex[i] <= 9)
-			k += _putchar(hex[i] + '0');
-		else
-		{
-			k += _putchar((hex[i] % 10) + 'a');
-		}
-	}
-*/
 	return (k);
 
 }

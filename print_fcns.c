@@ -68,7 +68,9 @@ int pu(va_list valist)
 int px(va_list valist)
 {
 	unsigned int n;
-	int k = 0, i, c = 0, hex[10], t;
+	int k = 0, c = 0;
+	char hex[10];
+
 
 	n = va_arg(valist, unsigned int);
 	if (n == 0)
@@ -79,38 +81,16 @@ int px(va_list valist)
 		n /= 16;
 		c++;
 	}
-	for (i = 0; i < c; i++)
+	c--;
+	while(c >= 0)
 	{
-		t = hex[i];
-		hex[i] = hex[c - i];
-		hex[c - i] = t;
-		if (hex[i] >= 0 && hex[i] <= 9)
-			k += _putchar(hex[i] + '0');
-		else
-		{
-			switch (hex[i]) {
-			case 10:
-				_putchar('a');
-				break;
-			case 11:
-				_putchar('b');
-				break;
-			case 12:
-				_putchar('c');
-				break;
-			case 13:
-				_putchar('d');
-				break;
-			case 14:
-				_putchar('e');
-				break;
-			case 15:
-				_putchar('f');
-				break;
-			default:
-				break;
-			}
-		}
+		if (hex[c] >= 0 && hex[c] <= 9)
+                        k += _putchar(hex[c] + '0');
+                else
+                {
+                        k += _putchar((hex[c] % 10) + 'a');
+                }
+		c--;
 	}
 	return (k);
 
