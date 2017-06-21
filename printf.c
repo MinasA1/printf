@@ -10,7 +10,7 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int i, k = 0 , j;
+	int i, k = 0, j;
 
 	va_start(args, format);
 
