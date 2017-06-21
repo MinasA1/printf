@@ -25,8 +25,7 @@ int _putstring(char *str)
  * _putchar - writes the character c to stdout
  * @c: The character to print
  *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
+ * Return: number of chars printed
  */
 int _putchar(char c)
 {
@@ -45,16 +44,8 @@ int checktype(char tp, va_list list)
 	id id[] = {
 		{"c", pc},
 		{"d", pd},
-/*
- *		{"e", pe}
- *		{"f", pf}
- *		{"g", pg}
- */
 		{"o", po},
 		{"i", pd},
-/*
- * {"o", po}
- */
 		{"b", pb},
 		{"s", ps},
 		{"u", pu},
