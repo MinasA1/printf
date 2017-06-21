@@ -10,7 +10,7 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int i, k = 0;
+	int i, k = 0 , j;
 
 	va_start(args, format);
 
@@ -21,13 +21,20 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			k += checktype(format[i + 1], args);
+			j = checktype(format[i + 1], args);
+			if (j > 0)
+				return (j);
+			k += j;
 			i++;
 		}
 		else
-			k += _putchar(format[i]);
+		{
+			j = _putchar(format[i]);
+			if (j > 0)
+				return (j);
+			k += j;
+		}
 	}
-
 	va_end(args);
 
 	return (k);

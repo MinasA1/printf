@@ -10,14 +10,15 @@
 
 int _putstring(char *str)
 {
-	int i = 0;
+	int i = 0 , j;
 
 	while (str[i])
 	{
-		write(1, &str[i], 1);
+		j = _putchar(str[i]);
+		if (j == -1)
+			return (j);
 		i++;
 	}
-/*	write(1, "\n", 1);*/
 	return (i);
 }
 
@@ -29,8 +30,7 @@ int _putstring(char *str)
  */
 int _putchar(char c)
 {
-	write(1, &c, 1);
-	return (1);
+	return(write(1, &c, 1));
 }
 
 /**
@@ -70,5 +70,7 @@ int checktype(char tp, va_list list)
 		else
 			sum += _putchar('%');
 	}
+	else if (sum == -2)
+		return (0);
 	return (sum);
 }
