@@ -30,8 +30,12 @@ int _putstring(char *str)
  */
 int _putchar(char c)
 {
-	return(write(1, &c, 1));
+	int i;
+
+	i = write(1, &c, 1);
+	return (i);
 }
+
 
 /**
  * checktype - matches a conversion specifier with its corresponding function

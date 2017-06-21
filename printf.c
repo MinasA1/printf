@@ -17,12 +17,12 @@ int _printf(const char *format, ...)
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
 
-	for (i = 0; format[i]; i++)
+	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] == '%')
 		{
 			j = checktype(format[i + 1], args);
-			if (j > 0)
+			if (j == -1)
 				return (j);
 			k += j;
 			i++;
@@ -30,7 +30,7 @@ int _printf(const char *format, ...)
 		else
 		{
 			j = _putchar(format[i]);
-			if (j > 0)
+			if (j == -1)
 				return (j);
 			k += j;
 		}

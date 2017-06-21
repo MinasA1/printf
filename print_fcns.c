@@ -20,12 +20,11 @@ int pc(va_list valist)
 int ps(va_list valist)
 {
 	char *str;
-	int i;
 
 	str = va_arg(valist, char *);
-	if (str = NULL)
-		str = "(NULL)";
-	if (str[0])
+	if (str == NULL)
+		str = "(null)";
+	if (str[0] == '\0')
 		return (-2);
 	return (_putstring(str));
 }
@@ -67,9 +66,8 @@ int pd(va_list valist)
 			k += _putchar(((n / a) % 10) + '0');
 		a /= 10;
 	}
-	if (c = 1)
+	if (c == 1)
 		k += _putchar(e + '0');
-	}
 	return (k);
 
 }
@@ -95,7 +93,6 @@ int pu(va_list valist)
 		a /= 10;
 	}
 	return (k);
-
 }
 
 /**
