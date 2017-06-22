@@ -37,14 +37,18 @@ int ps(va_list valist)
  */
 int pd(va_list valist)
 {
-	int n, k = 0, i, a = 10, c, e;
+	int n, t, k = 0, i = 0, a = 1, c, e;
 
 	n = va_arg(valist, int);
-	if (n != 0)
+	t = n;
+	while (t != 0)
 	{
-		for (i = 1; n / a; i++)
-			a *= 10;
+		t /= 10;
+		i++;
 	}
+	t = i;
+	for (i = 1; i < t; i++)
+		a *= 10;
 	if (n < 0 && n > INT_MIN)
 	{
 		k += _putchar('-');
@@ -55,15 +59,17 @@ int pd(va_list valist)
 		k += _putchar('-');
 		a /= 10;
 		e = n % 10;
-		n = (((n / a) % 10) * -1);
+		n = ((n / a) * -1);
 		c = 1;
 	}
 	if (n == 0)
 		k += _putchar('0');
-	for (i = i; i >= 0; i--)
+	for (i = 0; i < t; i++)
 	{
-		if (n / a != 0)
+		if (n / a)
+		{
 			k += _putchar(((n / a) % 10) + '0');
+		}
 		a /= 10;
 	}
 	if (c == 1)
@@ -80,21 +86,27 @@ int pd(va_list valist)
  */
 int pu(va_list valist)
 {
-	unsigned int n, i, a = 10;
+	unsigned int n, i, t, a = 1;
 	int k = 0;
 
 	n = va_arg(valist, unsigned int);
-	if (n != 0)
-        {
-                for (i = 1; n / a; i++)
-                        a *= 10;
+	t = n;
+	while (t != 0)
+	{
+		t /= 10;
+		i++;
 	}
+	t = i;
+	for (i = 1; i < t; i++)
+		a *= 10;
 	if (n == 0)
 		k += _putchar('0');
-	for (i = i; i >= 0; i--)
+	for (i = 0; i < t; i++)
 	{
-		if (n / a != 0)
+		if (n / a)
+		{
 			k += _putchar(((n / a) % 10) + '0');
+		}
 		a /= 10;
 	}
 	return (k);
