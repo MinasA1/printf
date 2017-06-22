@@ -80,13 +80,18 @@ int pd(va_list valist)
  */
 int pu(va_list valist)
 {
-	unsigned int n, i, a = 1000000000;
+	unsigned int n, i, a = 10;
 	int k = 0;
 
 	n = va_arg(valist, unsigned int);
+	if (n != 0)
+        {
+                for (i = 1; n / a; i++)
+                        a *= 10;
+	}
 	if (n == 0)
 		k += _putchar('0');
-	for (i = 0; i < 10; i++)
+	for (i = i; i >= 0; i--)
 	{
 		if (n / a != 0)
 			k += _putchar(((n / a) % 10) + '0');
