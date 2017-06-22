@@ -75,7 +75,6 @@ int pd(va_list valist)
 	if (c == 1)
 		k += _putchar(e + '0');
 	return (k);
-
 }
 
 
@@ -86,11 +85,11 @@ int pd(va_list valist)
  */
 int pu(va_list valist)
 {
-	unsigned int n, i, t, a = 1;
+	unsigned int n, i, a = 1000000000;
 	int k = 0;
 
 	n = va_arg(valist, unsigned int);
-	t = n;
+/*	t = n;
 	while (t != 0)
 	{
 		t /= 10;
@@ -99,9 +98,10 @@ int pu(va_list valist)
 	t = i;
 	for (i = 1; i < t; i++)
 		a *= 10;
+*/
 	if (n == 0)
 		k += _putchar('0');
-	for (i = 0; i < t; i++)
+	for (i = 0; i < 10; i++)
 	{
 		if (n / a)
 		{
